@@ -66,7 +66,7 @@ cnpm install url-loader file-loader --save-dev
 
 vi webpack.config.js
 ```javascript
-#add
+# loaders add
 {    
   test: /\.(png|jpg|gif)$/,
   loader: 'url-loader?limit=8192' // 这里的 limit=8192 表示用 base64 编码 <= ８K 的图像
@@ -99,7 +99,7 @@ vi webpack.config.js
 #add
 {
  test: /\.css$/,
- loader: 'style!css'
+ loader: 'style-loader!css-loader'
 }
 ```
 

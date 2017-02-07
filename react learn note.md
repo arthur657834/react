@@ -1,21 +1,29 @@
 <https://github.com/theJian/build-a-hn-front-page>
-
+```sh
 npm install -g cnpm --registry=<https://registry.npm.taobao.org>
 
 cnpm install webpack -g cnpm install webpack-dev-server -g
 
 cnpm install react react-dom --save cnpm install jquery --save cnpm install babel-core babel-loader babel-preset-es2015 babel-preset-react --save-dev
-
+```
 ex1:
-mkdir -p react/app react/build cd react
-
+```sh
+mkdir -p react/app react/build
+cd react
+```
+```sh
 vi webpack.config.js
+```
 ```javascript
 var path = require('path');
-module.exports = { entry: path.resolve(**dirname, 'app/app.js'), output: { path: path.resolve(**dirname, 'build'), filename: 'bundle.js' } }
+module.exports = {
+  entry: path.resolve(**dirname, 'app/app.js'),
+  output: { path: path.resolve(**dirname, 'build'), filename: 'bundle.js' }
+}
 ```
-
+```sh
 vi app/app.js
+```
 ```javascript
 document.write('It works');
 ```
@@ -31,12 +39,13 @@ vi build/index.html
 ```
 
 //打包
+```sh
 webpack
-
+```
 //运行服务器
-
+```sh
 webpack-dev-server
-
+```
 访问<http://localhost:8080/build/index.html>
 
 npm init -y会按照默认设置生成 package.json, 修改 scripts 的键值如下:
@@ -49,7 +58,11 @@ vi webpack.config.js
 ```javascript
 var path = require('path');
 
-module.exports = { entry: path.resolve(**dirname, 'app/app.js'), output: { path: path.resolve(**dirname, 'build'), filename: 'bundle.js' }, module: { loaders: [ { test: /.jsx?$/, exclude: /node_modules/, loader: 'babel', query: { presets: ['es2015','react'] } }, ] } };
+module.exports = {
+  entry: path.resolve(**dirname, 'app/app.js'),
+  output: { path: path.resolve(**dirname, 'build'), filename: 'bundle.js' },
+  module: { loaders: [ { test: /.jsx?$/, exclude: /node_modules/, loader: 'babel-loader', query: { presets: ['es2015','react'] } }, ] }
+};
 ```
 
 vi app.js
@@ -71,7 +84,6 @@ vi index.html
 ```html
 <div id="content">
 </div>
-
 <script src="./bundle.js">
 </script>
 ```
