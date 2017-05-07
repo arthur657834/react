@@ -2,9 +2,10 @@
 ```sh
 npm install -g cnpm --registry=<https://registry.npm.taobao.org>
 
-cnpm install webpack -g cnpm install webpack-dev-server -g
-
-cnpm install react react-dom --save cnpm install jquery --save cnpm install babel-core babel-loader babel-preset-es2015 babel-preset-react --save-dev
+cnpm install webpack -g 
+cnpm install webpack-dev-server -g
+cnpm install react react-dom --save 
+cnpm install jquery --save cnpm install babel-core babel-loader babel-preset-es2015 babel-preset-react --save-dev
 ```
 ex1:
 ```sh
